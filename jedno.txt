@@ -1,0 +1,65 @@
+class Clovek:
+    def __init__(self,jmeno,prijmeni,telefon,email,adresa,pojistovna):
+        self.jmeno = jmeno
+        self.prijmeni = prijmeni
+        self.telefon = ""
+        self.setTelefon(telefon)
+        if "@" in email:
+            self.email = email
+        else:
+            print("Email, který jste zadali je neplatný")
+            self.email = ""
+        self.adresa = adresa
+        self.pojistovna = pojistovna
+    def setTelefon(self,telefon):
+        if len(str(telefon)) == 9:
+            self.telefon = telefon
+        else:
+            print("Telefon, který jste zadali je neplatný")
+            self.telefon = ""
+    def getEmail(self):
+        return self.email
+    def setEmail(self,email):
+        if "@" in email:
+            self.email = email
+        else:
+            print("Email, který jste zadali je neplatný")
+            self.email = ""
+    def getJmeno(self):
+        return self.jmeno
+    def setJmeno(self,jmeno):
+        self.jmeno = jmeno
+    def getPrijmeni(self):
+        return self.prijmeni
+    def setPrijmeni(self,prijmeni):
+        self.prijmeni = prijmeni
+    def getTelefon(self):
+        return self.telefon
+    def getAdresa(self):
+        return self.adresa
+    def setAdresa(self,adresa):
+        self.adresa = adresa
+    def getPojistovna(self):
+        return self.pojistovna
+    def setPojistovna(self,pojistovna):
+        self.pojistovna = pojistovna
+    def __str__(self):
+        #return "\n Jméno: {}\n Příjmení: {}\n Telefon: {}\n Email: {}\n Adresa: {}\n Pojišťovna: {}".format(self.jmeno,self.prijmeni,self.telefon,self.email,self.adresa,self.pojistovna)
+        return """
+Jméno: {}
+Příjmení: {}
+Telefon: {}
+Email: {}
+Adresa: {}
+Pojišťovna: {}
+        """.format(self.jmeno,self.prijmeni,self.telefon,self.email,self.adresa,self.pojistovna)
+
+#Zde vytvořte alespoň 2 lidi a zkuste si všechny metody na jedné z nich
+karel = Clovek("Karel","Hympa",12345678,"karelseznam.cz","Svatojánská 36","VZP")
+jarda = Clovek("Jarda","Klomajz",987654321,"Jarda@seznam.cz","Svatojánská 37","BOZP")
+print(karel)
+karel.setTelefon(987654321) # všude
+#karel.telefon = 987654321 # jen v pythonu
+karel.email = "karel@karel.cz" # jen v pythonu
+print(jarda)
+print(karel)
