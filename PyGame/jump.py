@@ -72,3 +72,31 @@ while run:
     pygame.display.update()
     
 pygame.quit()
+
+
+       if v<0:
+             
+            # negative sign is added to counter negative velocity
+            m =-1
+ 
+            # objected reaches line and stops
+            if cara1_rect.colliderect(ctverec):
+                isjump = False
+                v = 7 - 1
+                m = 1
+                ctverec.bottom = cara1_rect.top + 1
+            if cara2_rect.colliderect(ctverec):
+                isjump = False
+                v = 7 - 1
+                m = 1
+                ctverec.bottom = cara2_rect.top + 1
+
+
+     
+    # creates time delay of 10ms
+    pygame.time.delay(30)
+ 
+    # it refreshes the screendow
+    pygame.display.update() 
+# closes the pygame screendow    
+pygame.quit()
